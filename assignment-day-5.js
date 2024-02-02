@@ -54,8 +54,16 @@ console.log(mergeWord1.concat(mergeWord2));
 // Use repeat() method to print 'Easy JavaScript' 3 times.
 console.log('Easy Javascript '.repeat(3));
 // 'Javascript is Easy, too Easy, too Easy, Easy to learn' Count the number of word 'Easy' in this sentence.
-const assignmentSentence1 = 'Javascript is Easy, too Easy, too Easy, Easy to learn';
-console.log(assignmentSentence1.match(/Easy/).length);
+let assignmentSentence1 = 'Javascript is Easy, too Easy, too Easy, Easy to learn';
+assignmentSentence1 = assignmentSentence1.replaceAll(',','');
+const wordArray = assignmentSentence1.split(" ");
+let easyWordCount=0;
+for(let index=0; index<wordArray.length; index++){
+    if(wordArray[index]==='Easy'){
+        easyWordCount+=1;
+    }
+}
+console.log(easyWordCount);
 // Use match() to count the number of all 'Easy' in the following sentence:'Javascript is Easy, too Easy, too Easy, Easy to learn'
 console.log(assignmentSentence1.match(/Easy/g).length);
 // Clean the following text and find the most frequent word (hint, use replace and regular expressions).
