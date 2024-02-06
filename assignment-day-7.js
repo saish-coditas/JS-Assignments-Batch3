@@ -59,17 +59,18 @@ console.log(studentGrade);
 // March, the season is Spring
 //  April, May, June, July or August, the season is Summer
 
-const monthName = 'March';
+const currentMonth = 'March';
+const monthName = currentMonth.toLowerCase();
 let seasonName; 
-if(monthName === 'September' || monthName === 'October' || monthName === 'November')
+if(monthName === 'september' || monthName === 'october' || monthName === 'november')
 {
     seasonName = 'Rainy';
 }
-else if(monthName === 'December' || monthName === 'January' || monthName === 'February')
+else if(monthName === 'december' || monthName === 'january' || monthName === 'february')
 {
     seasonName = 'Winter';
 }
-else if(monthName === 'March')
+else if(monthName === 'march')
 {
     seasonName = 'Spring';
 }
@@ -77,32 +78,22 @@ else
 {
     seasonName = 'Invalid Input';
 }
-console.log(`${monthName} falls in ${seasonName} season`);
+console.log(`${currentMonth} falls in ${seasonName} season`);
 
 // 7. Check if a day is weekend day or a working day. Your script will take day as an input.
 const dayOfWeek = 'Monday';
 let typeOfDay;
-switch(dayOfWeek)
+switch(dayOfWeek.toLowerCase())
 {
-    case 'Monday':
+    case 'monday':
+    case 'tuesday':
+    case 'wednesday':
+    case 'thursday':
+    case 'friday':
         typeOfDay='Weekday';
         break;
-    case 'Tuesday':
-        typeOfDay='Weekday';
-        break;
-    case 'Wednesday':
-        typeOfDay='Weekday';
-        break;
-    case 'Thursday':
-        typeOfDay='Weekday';
-        break;
-    case 'Friday':
-        typeOfDay='Weekday';
-        break;
-    case 'Saturday':
-        typeOfDay='Weekend';
-        break;
-    case 'Sunday':
+    case 'saturday':
+    case 'sunday':
         typeOfDay='Weekend';
         break;
     default:
@@ -111,7 +102,7 @@ switch(dayOfWeek)
 console.log(`${dayOfWeek} is a ${typeOfDay}`);
 
 // 8. Write a program which tells the number of days in a month.
-const year = 2004;
+const yearToCheck = 2004;
 const monthOfYear = 'February'; 
 if(monthOfYear==='January' || monthOfYear==='March' || monthOfYear==='May' || monthOfYear==='July' || monthOfYear=== 'August' || monthOfYear=== 'October' || monthOfYear=== 'December')
 {
@@ -124,7 +115,7 @@ else if(monthOfYear==='April' || monthOfYear==='June' || monthOfYear==='Septembe
 }
 else
 {
-    if(isLeapYear(year))
+    if(isLeapYear(yearToCheck))
     {
         console.log(`${monthOfYear} has 29 days`);
     }
@@ -135,11 +126,11 @@ else
 }
 
 // 9. Write a program to check whether the year is leap year or not.
-function isLeapYear(year)
+function isLeapYear(yearToCheck)
 {
-    if(year%400===0)
+    if(yearToCheck%400===0)
         return true;
-    if(year%4===0 && year%100!=0)
+    if(yearToCheck%4===0 && yearToCheck%100!=0)
         return true;
         
     return false;
